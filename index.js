@@ -6,7 +6,10 @@ app.get("/", (req, response)=>{
 })
 
 app.get("/shit", (req, res)=>{
-    res.send("welcome to aws bruh!!");
+    res.json({
+        "name" : "ankit chauhan",
+        "package" : "25lpa"
+    })
 })
 
 app.listen(3000, ()=>{
