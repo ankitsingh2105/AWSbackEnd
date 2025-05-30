@@ -1,23 +1,22 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-const cors = reqire("cors");
-
-app.get("/", (req, response)=>{
-    response.send("We are live");
-})
 
 app.use(cors({
-        origin : "https://locahost:5173",
-    }
-))
+    origin: "http://localhost:5173", // adjust to actual frontend URL
+}));
 
-app.get("/shit", (req, res)=>{
+app.get("/", (req, res) => {
+    res.send("We are not live");
+});
+
+app.get("/shit", (req, res) => {
     res.json({
-        "name" : "ankit chauhan",
-        "package" : "25lpa"
-    })
-})
+        name: "ankit chauhan",
+        package: "25lpa"
+    });
+});
 
-app.listen(3000, ()=>{
-    console.log("port 80");
-})
+app.listen(80, () => {
+    console.log("Server is running on port 80");
+});
